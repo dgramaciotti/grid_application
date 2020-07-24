@@ -1,0 +1,157 @@
+html,body,main{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #EDF2EF;
+    font-family: sans-serif;
+}
+main{
+    display: grid;
+    grid-template-columns: 200px auto 200px;
+    grid-template-rows: 1fr 200px 3fr 3fr 1fr;
+    grid-template-areas: "h h h"
+    "h-ad h-ad h-ad"
+    "ad-left c ad-right-1"
+    "t t ad-right-2"
+    "f f f"
+    ;
+    grid-gap: 0.2rem;
+}
+h1{
+    font-size: 4vh;
+}
+p, textarea{
+    font-size: 2.5vh;
+}
+header{
+    grid-area: h;
+    padding: 0;
+    margin: 0;
+    background-color: #212738;
+}
+header > ul {
+    list-style: none;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+header > ul > div{
+    display: flex;
+}
+li{
+    margin-left:20px;
+}
+a{
+    color: white;
+    text-decoration: none;
+    font-size: 3vh;
+}
+a:hover{
+    color:#5BC0BE;
+}
+.first-ad{  
+    grid-area: h-ad;
+    justify-self: center;
+    height: 100px;
+}
+.ad-left{
+    grid-area: ad-left;
+    justify-self: center;
+}
+.content{
+    grid-area: c;
+    justify-self: center;
+}
+.conteiner > p{
+    margin: 0;
+    color: grey;
+}
+#texto{
+    width: 45vw;
+    height: 30vh;
+    resize: none;
+}
+#button{
+ display:inline-block;
+ padding:0.3em 1.2em;
+ margin:0 0.1em 0.1em 0;
+ border:0.16em solid rgba(255,255,255,0);
+ border-radius:2em;
+ box-sizing: border-box;
+ text-decoration:none;
+ font-weight:300;
+ color:white;
+ text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+ text-align:center;
+ background-color: #5BC0BE;
+ transition: all 0.2s;
+}
+#button:hover{
+    border-color: white;
+}
+#sorteado{
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.1em 0.1em 0;
+    border:0.16em solid rgba(255,255,255,0);
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-weight:300;
+    color:white;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    background-color: #0f3332;
+    transition: all 0.2s;
+}
+#sorteado:hover{
+    border-color: white;
+}
+.ad-right-1{
+    grid-area: ad-right-1;
+    justify-self: center;
+}
+.text{
+    grid-area: t;
+    justify-self: left;
+}
+.ad-right-2{
+    grid-area: ad-right-2;
+    justify-self: center;
+}
+footer{
+    grid-area: f;
+    background-color: #212738;
+    color: white;
+}
+footer > p{
+    text-align: center;
+}
+@media (max-device-width:900px), (max-width: 900px){
+    main{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 200px 3fr 3fr 1fr;
+        grid-gap: 1rem;
+        grid-template-areas: "h"
+        "h-ad"
+        "c"
+        "t"
+        "f";
+    }
+    .ad-left, .ad-right-1, .ad-right-2{
+        display: none;
+    }
+    .content{
+        justify-self: left;
+    }
+    img{
+        max-width: 100%;
+        height: auto;
+        width: auto;
+    }
+    #texto{
+        width: 80vw;
+    }
+}
+
